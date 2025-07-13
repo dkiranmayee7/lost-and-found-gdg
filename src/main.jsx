@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Home from "./pages/Home";
@@ -11,7 +12,7 @@ import ReportLost from "./pages/ReportLost";
 import ReportFound from "./pages/ReportFound";
 import ClaimForm from "./pages/ClaimForm";
 import Dashboard from "./pages/Dashboard";
-import './index.css';
+
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(

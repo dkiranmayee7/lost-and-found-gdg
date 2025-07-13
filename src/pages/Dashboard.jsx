@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { collection, getDocs, where, query } from "firebase/firestore";
 import { db } from "../firebase";
-import "../styles.css";
+
 
 function Dashboard() {
   const [stats, setStats] = useState({

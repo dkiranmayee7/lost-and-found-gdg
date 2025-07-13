@@ -1,8 +1,8 @@
+// src/pages/ReportLost.jsx
 import React, { useState } from "react";
 import axios from "axios";
 import { db, auth } from "../firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-import "../styles.css";
 
 function ReportLost() {
   const [itemName, setItemName] = useState("");
@@ -83,8 +83,8 @@ function ReportLost() {
 
   return (
     <div style={styles.container}>
-      <h2 style={styles.heading}>📍 Report a Lost Item</h2>
       <form onSubmit={handleSubmit} style={styles.form}>
+        <h2 style={styles.heading}>📍 Report a Lost Item</h2>
         <input
           style={styles.input}
           placeholder="Item Name"
@@ -175,20 +175,17 @@ const styles = {
     borderRadius: "10px",
     boxShadow: "0 0 10px rgba(0,0,0,0.5)",
   },
+  heading: {
+    marginBottom: "20px",
+    fontSize: "24px",
+    fontWeight: "bold",
+    textAlign: "center",
+    color: "white",
+  },
   input: {
     marginBottom: "15px",
     padding: "10px",
     fontSize: "16px",
-    backgroundColor: "#2c2c2c",
-    border: "1px solid #444",
-    borderRadius: "5px",
-    color: "white",
-  },
-  textarea: {
-    marginBottom: "15px",
-    padding: "10px",
-    fontSize: "16px",
-    height: "100px",
     backgroundColor: "#2c2c2c",
     border: "1px solid #444",
     borderRadius: "5px",
@@ -213,7 +210,11 @@ const styles = {
     borderRadius: "5px",
     cursor: "pointer",
   },
+  previewImage: {
+    maxWidth: "100%",
+    borderRadius: "8px",
+    marginBottom: "15px",
+  },
 };
-
 
 export default ReportLost;

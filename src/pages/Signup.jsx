@@ -34,10 +34,10 @@ function Signup() {
   };
 
   return (
-    <div style={styles.page}>
-      <div style={styles.container}>
-        <h2>🔐 Sign Up</h2>
-        <form onSubmit={handleSignup} style={styles.form}>
+    <div style={styles.wrapper}>
+      <div style={styles.card}>
+        <h2 style={styles.heading}>📝 Create Account</h2>
+        <form onSubmit={handleSignup}>
           <input
             style={styles.input}
             type="text"
@@ -67,11 +67,11 @@ function Signup() {
           </button>
           {error && <p style={styles.error}>{error}</p>}
         </form>
-        <p style={styles.linkText}>
+        <p style={styles.text}>
           Already have an account?{" "}
           <span
-            onClick={() => navigate("/login")}
             style={styles.link}
+            onClick={() => navigate("/login")}
           >
             Login here
           </span>
@@ -82,57 +82,60 @@ function Signup() {
 }
 
 const styles = {
-  page: {
-    backgroundColor: "#121212",
-    color: "white",
-    minHeight: "100vh",
+  wrapper: {
+    height: "100vh",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "#111",
+    color: "#fff",
   },
-  container: {
-    width: "100%",
-    maxWidth: "400px",
-    padding: "30px",
-    borderRadius: "10px",
+  card: {
     backgroundColor: "#1e1e1e",
+    padding: "40px",
+    borderRadius: "10px",
+    boxShadow: "0 4px 15px rgba(0,0,0,0.3)",
     textAlign: "center",
-    boxShadow: "0 0 10px rgba(0,0,0,0.6)",
+    width: "90%",
+    maxWidth: "400px",
   },
-  form: {
-    display: "flex",
-    flexDirection: "column",
+  heading: {
+    marginBottom: "20px",
+    fontWeight: "bold",
+    color: "#ccc",
   },
   input: {
-    padding: "12px",
+    width: "100%",
+    padding: "10px",
     marginBottom: "15px",
     fontSize: "16px",
-    borderRadius: "5px",
     border: "1px solid #444",
+    borderRadius: "5px",
     backgroundColor: "#2c2c2c",
-    color: "white",
+    color: "#fff",
   },
   button: {
+    width: "100%",
     padding: "12px",
-    fontSize: "16px",
-    backgroundColor: "#4caf50",
-    color: "white",
+    backgroundColor: "#1976d2",
+    color: "#fff",
     border: "none",
+    fontSize: "16px",
     borderRadius: "5px",
+    cursor: "pointer",
+  },
+  text: {
+    marginTop: "15px",
+    color: "#bbb",
+  },
+  link: {
+    color: "#42a5f5",
+    textDecoration: "underline",
     cursor: "pointer",
   },
   error: {
     color: "red",
     marginTop: "10px",
-  },
-  linkText: {
-    marginTop: "15px",
-    fontSize: "14px",
-  },
-  link: {
-    color: "#2196f3",
-    cursor: "pointer",
-    textDecoration: "underline",
   },
 };
 

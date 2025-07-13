@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { collection, query, where, onSnapshot } from "firebase/firestore";
 import { db } from "../firebase";
-import "../styles.css";
+
 
 function FoundItems() {
   const [foundItems, setFoundItems] = useState([]);

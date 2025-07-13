@@ -1,10 +1,8 @@
-// src/pages/ClaimForm.jsx
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { db, auth } from "../firebase";
 import { doc, getDoc, updateDoc, serverTimestamp } from "firebase/firestore";
 import { onAuthStateChanged } from "firebase/auth";
-import "../styles.css";
 
 function ClaimForm() {
   const { itemId } = useParams();
@@ -61,25 +59,27 @@ function ClaimForm() {
 
   return (
     <div style={styles.container}>
-      <h2>🔍 Claim This Item</h2>
-      <form onSubmit={handleClaimSubmit} style={styles.form}>
-        <input
-          type="text"
-          placeholder="Item Name"
-          value={claimedName}
-          onChange={(e) => setClaimedName(e.target.value)}
-          required
-          style={styles.input}
-        />
-        <textarea
-          placeholder="Describe the item"
-          value={claimedDescription}
-          onChange={(e) => setClaimedDescription(e.target.value)}
-          required
-          style={styles.textarea}
-        />
-        <button type="submit" style={styles.button}>Submit Claim</button>
-      </form>
+      <div style={styles.inner}>
+        <h2 style={styles.heading}>🔍 Claim This Item</h2>
+        <form onSubmit={handleClaimSubmit} style={styles.form}>
+          <input
+            type="text"
+            placeholder="Item Name"
+            value={claimedName}
+            onChange={(e) => setClaimedName(e.target.value)}
+            required
+            style={styles.input}
+          />
+          <textarea
+            placeholder="Describe the item"
+            value={claimedDescription}
+            onChange={(e) => setClaimedDescription(e.target.value)}
+            required
+            style={styles.textarea}
+          />
+          <button type="submit" style={styles.button}>Submit Claim</button>
+        </form>
+      </div>
     </div>
   );
 }
@@ -94,6 +94,16 @@ const styles = {
     color: "white",
     padding: "30px",
     fontFamily: "Arial",
+  },
+  inner: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    width: "100%",
+  },
+  heading: {
+    textAlign: "center",
+    marginBottom: "20px",
   },
   form: {
     display: "flex",
@@ -135,6 +145,5 @@ const styles = {
     cursor: "pointer",
   },
 };
-
 
 export default ClaimForm;

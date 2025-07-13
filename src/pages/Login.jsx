@@ -18,9 +18,9 @@ function Login() {
   };
 
   return (
-    <div style={styles.page}>
-      <div style={styles.container}>
-        <h2 style={styles.title}>🔐 Lost & Found Login</h2>
+    <div style={styles.wrapper}>
+      <div style={styles.card}>
+        <h2 style={styles.heading}>🔐 Lost & Found Login</h2>
         <input
           type="email"
           placeholder="Email"
@@ -53,53 +53,56 @@ function Login() {
 }
 
 const styles = {
-  page: {
-    backgroundColor: "#121212",
-    color: "#fff",
-    minHeight: "100vh",
+  wrapper: {
+    height: "100vh",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "#111", // dark background
+    color: "#fff",
   },
-  container: {
-    padding: "30px",
-    borderRadius: "8px",
-    width: "100%",
-    maxWidth: "400px",
+  card: {
     backgroundColor: "#1e1e1e",
-    boxShadow: "0 0 10px rgba(0,0,0,0.6)",
+    padding: "40px",
+    borderRadius: "10px",
+    boxShadow: "0 4px 15px rgba(0,0,0,0.3)",
     textAlign: "center",
+    width: "90%",
+    maxWidth: "400px",
   },
-  title: {
+  heading: {
     marginBottom: "20px",
+    fontWeight: "bold",
+    color: "#ccc",
   },
   input: {
     width: "100%",
-    padding: "12px",
+    padding: "10px",
     marginBottom: "15px",
     fontSize: "16px",
     border: "1px solid #444",
-    borderRadius: "4px",
+    borderRadius: "5px",
     backgroundColor: "#2c2c2c",
-    color: "white",
+    color: "#fff",
   },
   button: {
     width: "100%",
     padding: "12px",
-    fontSize: "16px",
     backgroundColor: "#4caf50",
-    color: "white",
+    color: "#fff",
     border: "none",
-    borderRadius: "4px",
+    fontSize: "16px",
+    borderRadius: "5px",
     cursor: "pointer",
   },
   text: {
     marginTop: "15px",
+    color: "#bbb",
   },
   link: {
-    color: "#2196f3",
-    cursor: "pointer",
+    color: "#42a5f5",
     textDecoration: "underline",
+    cursor: "pointer",
   },
 };
 
