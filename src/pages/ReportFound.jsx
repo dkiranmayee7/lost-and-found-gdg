@@ -10,6 +10,7 @@ function ReportFound() {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [identifier, setIdentifier] = useState("");
+  const [location, setLocation] = useState("");
   const [imageFile, setImageFile] = useState(null);
   const [imageUrl, setImageUrl] = useState("");
 
@@ -53,6 +54,7 @@ function ReportFound() {
         date,
         time,
         identifier,
+        location,
         imageUrl,
         createdAt: serverTimestamp(),
         userId: currentUser?.uid || "",
@@ -108,13 +110,19 @@ function ReportFound() {
           required
         />
         <input
+          style={styles.input}
+          placeholder="Location Found"
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
+          required
+        />
+        <input
           type="file"
           style={styles.input}
           accept="image/*"
           onChange={(e) => setImageFile(e.target.files[0])}
           required
         />
-
         <button
           type="button"
           style={styles.uploadBtn}
@@ -122,11 +130,9 @@ function ReportFound() {
         >
           Upload Image
         </button>
-
         {imageUrl && (
           <img src={imageUrl} alt="Preview" style={styles.preview} />
         )}
-
         <button type="submit" style={styles.submitBtn}>
           Submit Found Report
         </button>
