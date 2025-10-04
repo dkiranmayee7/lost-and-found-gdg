@@ -27,7 +27,7 @@ Connect with me on [LinkedIn](https://linkedin.com/in/vatsalyajillellamudi?utm_s
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/vatsalya-j/lost-and-found-gdg.git
+    git clone https://github.com/
     ```
 2. Set up Firebase credentials (see `/firebase-config.js`)
 3. Start the development server:
